@@ -200,8 +200,35 @@ section {
 }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
 
+/* ── Scroll-triggered reveals ── */
+#about, #projects, #experience, #skills, #interests, #contact {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+
+#about.visible, #projects.visible, #experience.visible,
+#skills.visible, #interests.visible, #contact.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   section { padding: 4rem 0; }
   .container { padding: 0 1.25rem; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  #about, #projects, #experience, #skills, #interests, #contact {
+    opacity: 1;
+    transform: none;
+  }
 }
