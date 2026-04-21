@@ -1,25 +1,8 @@
-# build
+### build ###
 dist/
 .astro/
-
-# dependencies
 node_modules/
 
-# environment
-.env
-.env.*
-
-# editor
-.idea/
-*.swp
-*.swo
-*~
-
-# os
+### os ###
 .DS_Store
 Thumbs.db
-
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*

@@ -1,25 +1,10 @@
-# matejstastny.github.io
+<img src="https://github.com/matejstastny/matejstastny.github.io/blob/main/public/flower-kitty.jpeg?raw=true" alt="Profile Picture" width="30%" align="right">
 
-Personal portfolio website built with [Astro](https://astro.build).
+# Personal website
 
-## Development
+This website is build with [Astro](https://astro.build), and deployed to GitHub Pages at [matejstastny.github.io](https://matejstastny.github.io). These are the commands for development and deployment:
 
 ```bash
 npm install
 npm run dev
 ```
-
-## Build
-
-```bash
-npm run build
-npm run preview
-```
-
-## Deployment
-
-Automatically deployed to [GitHub Pages](https://matejstastny.github.io) via GitHub Actions on push to `main`.
-
-## License
-
-[MIT](LICENSE)
