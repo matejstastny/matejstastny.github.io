@@ -1,26 +1,5 @@
 ---
-const categories = [
-    {
-        name: 'Languages',
-        icon: '🌎',
-        items: ['Java', 'Python', 'Bash', 'C#'],
-    },
-    {
-        name: 'Game Engines',
-        icon: '🎮',
-        items: ['Godot', 'GameMaker', 'Unity', 'libGDX'],
-    },
-    {
-        name: 'Robotics & DevOps',
-        icon: '🦾',
-        items: ['ROS 2', 'Gazebo', 'RViz', 'Docker', 'URDF'],
-    },
-    {
-        name: 'Tools',
-        icon: '🛠️',
-        items: ['Git', 'GitHub', 'VS Code', 'Illustrator', 'Microsoft Suite'],
-    },
-];
+
 ---
 
 <section id="skills">
@@ -29,21 +8,81 @@ const categories = [
         <h2 class="section-title">What I work with</h2>
 
         <div class="skills-grid">
-            {
-                categories.map((cat) => (
-                    <div class="skill-group">
-                        <div class="skill-group-header">
-                            <span class="skill-icon">{cat.icon}</span>
-                            <h3 class="skill-category">{cat.name}</h3>
-                        </div>
-                        <div class="skill-pills">
-                            {cat.items.map((item) => (
-                                <span class="pill">{item}</span>
-                            ))}
-                        </div>
-                    </div>
-                ))
-            }
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <span class="skill-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </span>
+                    <h3 class="skill-category">Languages</h3>
+                </div>
+                <div class="skill-pills">
+                    <span class="pill">Java</span>
+                    <span class="pill">Python</span>
+                    <span class="pill">Bash</span>
+                    <span class="pill">C#</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <span class="skill-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="6" y1="3" x2="6" y2="15"></line>
+                            <circle cx="18" cy="6" r="3"></circle>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <path d="M18 9a9 9 0 0 1-9 9"></path>
+                        </svg>
+                    </span>
+                    <h3 class="skill-category">Game Engines</h3>
+                </div>
+                <div class="skill-pills">
+                    <span class="pill">Godot</span>
+                    <span class="pill">GameMaker</span>
+                    <span class="pill">Unity</span>
+                    <span class="pill">libGDX</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <span class="skill-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2v6l3-3"></path>
+                            <path d="M12 8l-3-3"></path>
+                            <circle cx="12" cy="14" r="4"></circle>
+                            <path d="M12 18v4"></path>
+                            <path d="M8 14H4"></path>
+                            <path d="M20 14h-4"></path>
+                        </svg>
+                    </span>
+                    <h3 class="skill-category">Robotics & DevOps</h3>
+                </div>
+                <div class="skill-pills">
+                    <span class="pill">ROS 2</span>
+                    <span class="pill">Gazebo</span>
+                    <span class="pill">RViz</span>
+                    <span class="pill">Docker</span>
+                    <span class="pill">URDF</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <div class="skill-group-header">
+                    <span class="skill-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                        </svg>
+                    </span>
+                    <h3 class="skill-category">Tools</h3>
+                </div>
+                <div class="skill-pills">
+                    <span class="pill">Git</span>
+                    <span class="pill">GitHub</span>
+                    <span class="pill">VS Code</span>
+                    <span class="pill">Illustrator</span>
+                    <span class="pill">Microsoft Suite</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -65,7 +104,7 @@ const categories = [
 
     .skill-group:hover {
         border-color: var(--border-hover);
-        box-shadow: 0 0 24px rgba(232, 168, 76, 0.05);
+        box-shadow: 0 0 24px rgba(168, 85, 247, 0.07);
     }
 
     .skill-group-header {
@@ -76,14 +115,27 @@ const categories = [
     }
 
     .skill-icon {
-        font-size: 1.2rem;
-        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: rgba(168, 85, 247, 0.1);
+        color: var(--violet);
+        transition: all 0.3s ease;
+    }
+
+    .skill-group:hover .skill-icon {
+        background: rgba(168, 85, 247, 0.18);
+        box-shadow: 0 0 12px rgba(168, 85, 247, 0.12);
     }
 
     .skill-category {
         font-family: var(--font-body);
         font-size: 0.95rem;
         font-weight: 600;
+        font-style: normal;
         letter-spacing: 0.01em;
     }
 
@@ -106,13 +158,13 @@ const categories = [
     }
 
     .skill-group:hover .pill {
-        border-color: rgba(232, 168, 76, 0.1);
+        border-color: rgba(168, 85, 247, 0.12);
     }
 
     .pill:hover {
-        color: var(--amber);
+        color: var(--violet);
         border-color: var(--border-hover) !important;
-        background: rgba(232, 168, 76, 0.06);
+        background: rgba(168, 85, 247, 0.08);
     }
 
     @media (max-width: 768px) {

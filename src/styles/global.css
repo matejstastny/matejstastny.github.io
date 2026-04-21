@@ -1,35 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 /* ── Tokens ── */
 :root {
-    --bg-deep: #141210;
-    --bg-primary: #1a1614;
-    --bg-secondary: #231f1b;
-    --bg-card: #262019;
-    --bg-card-hover: #2e2720;
+    --bg-deep: #08070e;
+    --bg-primary: #0d0c18;
+    --bg-secondary: #141225;
+    --bg-card: #17152e;
+    --bg-card-hover: #1e1b3d;
 
-    --amber: #e8a84c;
-    --amber-light: #f0c070;
-    --amber-dim: #c48a3a;
-    --amber-glow: rgba(232, 168, 76, 0.15);
-    --amber-glow-strong: rgba(232, 168, 76, 0.3);
+    --violet: #a855f7;
+    --violet-light: #c084fc;
+    --violet-dim: #7c3aed;
+    --violet-glow: rgba(168, 85, 247, 0.15);
+    --violet-glow-strong: rgba(168, 85, 247, 0.3);
 
-    --green: #8fb573;
-    --green-dim: #6d9455;
-    --green-glow: rgba(143, 181, 115, 0.12);
+    --pink: #ec4899;
+    --pink-light: #f472b6;
+    --pink-dim: #db2777;
+    --pink-glow: rgba(236, 72, 153, 0.12);
 
-    --rose: #c47a7a;
+    --blue: #38bdf8;
+    --blue-dim: #0ea5e9;
 
-    --cream: #ede6db;
-    --cream-dim: #d4cbc0;
-    --text-secondary: #b8ad9e;
-    --text-muted: #7a6f63;
+    --cream: #ede4f5;
+    --cream-dim: #d4c8e8;
+    --text-secondary: #b3a4cc;
+    --text-muted: #6b5f8a;
 
-    --border: rgba(237, 230, 219, 0.06);
-    --border-hover: rgba(232, 168, 76, 0.25);
+    --border: rgba(168, 85, 247, 0.07);
+    --border-hover: rgba(168, 85, 247, 0.25);
 
-    --font-display: 'Fraunces', Georgia, serif;
-    --font-body: 'Outfit', system-ui, sans-serif;
+    --font-display: 'Instrument Serif', Georgia, serif;
+    --font-body: 'Sora', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
     --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -68,7 +70,7 @@ body::after {
     inset: 0;
     pointer-events: none;
     z-index: 9999;
-    opacity: 0.025;
+    opacity: 0.03;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-repeat: repeat;
     background-size: 256px 256px;
@@ -82,7 +84,7 @@ h4,
 h5,
 h6 {
     font-family: var(--font-display);
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.2;
     color: var(--cream);
 }
@@ -93,13 +95,13 @@ p {
 }
 
 a {
-    color: var(--amber);
+    color: var(--violet);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 a:hover {
-    color: var(--amber-light);
+    color: var(--violet-light);
 }
 
 img {
@@ -127,30 +129,31 @@ section {
     font-weight: 500;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--amber);
+    color: var(--pink);
     margin-bottom: 0.5rem;
     opacity: 0.85;
 }
 
 .section-title {
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-size: clamp(2rem, 4.5vw, 3rem);
     margin-bottom: 3rem;
+    font-style: italic;
 }
 
 /* ── Neon glow ── */
 .glow {
-    color: var(--amber);
+    color: var(--violet);
     text-shadow:
-        0 0 7px rgba(232, 168, 76, 0.4),
-        0 0 30px rgba(232, 168, 76, 0.15),
-        0 0 60px rgba(232, 168, 76, 0.06);
+        0 0 7px rgba(168, 85, 247, 0.5),
+        0 0 30px rgba(168, 85, 247, 0.2),
+        0 0 60px rgba(168, 85, 247, 0.08);
 }
 
-.glow-green {
-    color: var(--green);
+.glow-pink {
+    color: var(--pink);
     text-shadow:
-        0 0 7px rgba(143, 181, 115, 0.4),
-        0 0 30px rgba(143, 181, 115, 0.15);
+        0 0 7px rgba(236, 72, 153, 0.5),
+        0 0 30px rgba(236, 72, 153, 0.2);
 }
 
 /* ── Keyframes ── */
@@ -198,6 +201,25 @@ section {
     }
 }
 
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes glow-pulse {
+    0%,
+    100% {
+        filter: drop-shadow(0 0 6px rgba(168, 85, 247, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 14px rgba(168, 85, 247, 0.6));
+    }
+}
+
 /* ── Entrance animations ── */
 .fade-in {
     animation: fadeInUp 0.8s var(--ease-out) both;
@@ -225,7 +247,7 @@ section {
 
 /* ── Selection ── */
 ::selection {
-    background-color: rgba(232, 168, 76, 0.3);
+    background-color: rgba(168, 85, 247, 0.35);
     color: var(--cream);
 }
 
@@ -241,7 +263,7 @@ section {
     border-radius: 3px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--text-secondary);
+    background: var(--violet-dim);
 }
 
 /* ── Scroll-triggered reveals ── */

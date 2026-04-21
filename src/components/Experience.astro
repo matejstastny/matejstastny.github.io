@@ -10,7 +10,7 @@ const experiences = [
             'Lead simulation infrastructure for a 50-member robotics team competing in the University Rover Challenge.',
             'Develop and maintain rover simulation using ROS 2 (Humble), Gazebo Fortress, RViz, and URDF.',
             'Containerize development environments with Docker for reproducibility across team machines.',
-            'Configure ROS–Gazebo bridges, joint controllers, and simulation plugins to mirror real-world rover behavior.',
+            'Configure ROS\u2013Gazebo bridges, joint controllers, and simulation plugins to mirror real-world rover behavior.',
         ],
     },
     {
@@ -51,7 +51,7 @@ const experiences = [
                                             exp.org
                                         )}
                                         <span class="timeline-location">
-                                            &nbsp;· {exp.location}
+                                            &nbsp;/ {exp.location}
                                         </span>
                                     </p>
                                 </div>
@@ -89,7 +89,7 @@ const experiences = [
         width: 1px;
         background: linear-gradient(
             to bottom,
-            var(--amber-dim),
+            var(--violet-dim),
             var(--border) 40%,
             var(--border) 60%,
             transparent
@@ -108,15 +108,15 @@ const experiences = [
         height: 11px;
         border-radius: 50%;
         background: var(--bg-deep);
-        border: 2px solid var(--amber-dim);
+        border: 2px solid var(--violet-dim);
         z-index: 1;
         transition: all 0.3s ease;
     }
 
     .timeline-item:hover .timeline-dot {
-        background: var(--amber);
-        border-color: var(--amber);
-        box-shadow: 0 0 12px rgba(232, 168, 76, 0.4);
+        background: var(--violet);
+        border-color: var(--violet);
+        box-shadow: 0 0 12px rgba(168, 85, 247, 0.5);
     }
 
     .timeline-content {
@@ -129,7 +129,7 @@ const experiences = [
 
     .timeline-content:hover {
         border-color: var(--border-hover);
-        box-shadow: 0 0 30px rgba(232, 168, 76, 0.04);
+        box-shadow: 0 0 30px rgba(168, 85, 247, 0.06);
     }
 
     .timeline-header {
@@ -142,7 +142,7 @@ const experiences = [
 
     .timeline-role {
         font-size: 1.15rem;
-        font-weight: 600;
+        font-style: italic;
         margin-bottom: 0.25rem;
     }
 
@@ -184,10 +184,10 @@ const experiences = [
     }
 
     .timeline-bullets li::before {
-        content: '›';
+        content: '\203A';
         position: absolute;
         left: 0;
-        color: var(--amber-dim);
+        color: var(--violet-dim);
         font-weight: 600;
     }
 

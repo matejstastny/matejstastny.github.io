@@ -1,42 +1,5 @@
 ---
-const interests = [
-    {
-        emoji: '🎮',
-        title: 'Games',
-        items: ['Stray', 'Minecraft', 'Celeste'],
-        note: 'Cozy and indie games are my thing.',
-    },
-    {
-        emoji: '🕹️',
-        title: 'Game Dev',
-        items: ['Godot', 'Unity', 'GameMaker', 'libGDX'],
-        note: 'I love building games as much as playing them.',
-    },
-    {
-        emoji: '🐱',
-        title: 'Cats',
-        items: [],
-        note: 'Obviously. Just look at my profile picture.',
-    },
-    {
-        emoji: '🤖',
-        title: 'Robotics',
-        items: ['ROS 2', 'Gazebo', 'Mars rovers'],
-        note: 'Making robots do things in simulation so they can do things in real life.',
-    },
-    {
-        emoji: '🇨🇿',
-        title: 'Czech Heritage',
-        items: [],
-        note: 'Born and raised in the Czech Republic. Fluent in Czech, fueled by Czech food.',
-    },
-    {
-        emoji: '🌸',
-        title: 'Languages',
-        items: ['Japanese', 'German'],
-        note: 'Currently learning both - slowly but surely.',
-    },
-];
+
 ---
 
 <section id="interests">
@@ -45,22 +8,74 @@ const interests = [
         <h2 class="section-title">Outside of code</h2>
 
         <div class="interests-grid">
-            {
-                interests.map((item) => (
-                    <div class="interest-tile">
-                        <span class="interest-emoji">{item.emoji}</span>
-                        <h3 class="interest-name">{item.title}</h3>
-                        {item.items.length > 0 && (
-                            <div class="interest-tags">
-                                {item.items.map((t) => (
-                                    <span class="interest-tag">{t}</span>
-                                ))}
-                            </div>
-                        )}
-                        <p class="interest-note">{item.note}</p>
-                    </div>
-                ))
-            }
+            <!-- Games -->
+            <div class="interest-tile">
+                <span class="interest-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="6" y1="11" x2="10" y2="11"></line>
+                        <line x1="8" y1="9" x2="8" y2="13"></line>
+                        <line x1="15" y1="12" x2="15.01" y2="12"></line>
+                        <line x1="18" y1="10" x2="18.01" y2="10"></line>
+                        <path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"></path>
+                    </svg>
+                </span>
+                <h3 class="interest-name">Games</h3>
+                <div class="interest-tags">
+                    <span class="interest-tag">Last of Us</span>
+                    <span class="interest-tag">Stray</span>
+                    <span class="interest-tag">Minecraft</span>
+                </div>
+                <p class="interest-note">Cozy, story-driven, and indie games are my thing.</p>
+            </div>
+
+            <!-- Shows -->
+            <div class="interest-tile">
+                <span class="interest-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="7" width="20" height="15" rx="2" ry="2"></rect>
+                        <polyline points="17 2 12 7 7 2"></polyline>
+                    </svg>
+                </span>
+                <h3 class="interest-name">Shows</h3>
+                <div class="interest-tags">
+                    <span class="interest-tag">Arcane</span>
+                    <span class="interest-tag">Labyrinth</span>
+                    <span class="interest-tag">Last of Us</span>
+                </div>
+                <p class="interest-note">Animated worlds and emotionally devastating storylines.</p>
+            </div>
+
+            <!-- Music -->
+            <div class="interest-tile">
+                <span class="interest-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 18V5l12-2v13"></path>
+                        <circle cx="6" cy="18" r="3"></circle>
+                        <circle cx="18" cy="16" r="3"></circle>
+                    </svg>
+                </span>
+                <h3 class="interest-name">Music</h3>
+                <div class="interest-tags">
+                    <span class="interest-tag">Tiffany Day</span>
+                    <span class="interest-tag">Porter Robinson</span>
+                </div>
+                <p class="interest-note">Dreamy vocals and electronic worlds on repeat.</p>
+            </div>
+
+            <!-- Cats -->
+            <div class="interest-tile">
+                <span class="interest-icon">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.1 6.27-.46.52.69.73 1.52.46 2.46-.26.93-.85 1.73-1.73 2.24C20.24 10.62 21 12.26 21 14c0 3.31-4.03 6-9 6s-9-2.69-9-6c0-1.74.76-3.38 2-4.5-.88-.51-1.47-1.31-1.73-2.24-.27-.94-.06-1.77.46-2.46C4.97 3.16 8.22 3.26 10 5.26 10.65 5.09 11.33 5 12 5z"></path>
+                        <path d="M8 14v.5"></path>
+                        <path d="M16 14v.5"></path>
+                        <path d="M11.25 16.25h1.5L12 17l-.75-.75z"></path>
+                    </svg>
+                </span>
+                <h3 class="interest-name">Cats</h3>
+                <div class="interest-tags"></div>
+                <p class="interest-note">Obviously. Cat person through and through.</p>
+            </div>
         </div>
     </div>
 </section>
@@ -68,7 +83,7 @@ const interests = [
 <style>
     .interests-grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 1.25rem;
     }
 
@@ -82,21 +97,33 @@ const interests = [
 
     .interest-tile:hover {
         border-color: var(--border-hover);
-        box-shadow: 0 0 24px rgba(232, 168, 76, 0.05);
+        box-shadow: 0 0 24px rgba(168, 85, 247, 0.07);
         transform: translateY(-3px);
     }
 
-    .interest-emoji {
-        font-size: 1.6rem;
-        display: block;
-        margin-bottom: 0.75rem;
-        line-height: 1;
+    .interest-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: rgba(168, 85, 247, 0.1);
+        color: var(--violet);
+        margin-bottom: 0.85rem;
+        transition: all 0.3s ease;
+    }
+
+    .interest-tile:hover .interest-icon {
+        background: rgba(168, 85, 247, 0.18);
+        box-shadow: 0 0 16px rgba(168, 85, 247, 0.12);
     }
 
     .interest-name {
         font-family: var(--font-body);
         font-size: 1rem;
         font-weight: 600;
+        font-style: normal;
         margin-bottom: 0.6rem;
     }
 
@@ -105,6 +132,7 @@ const interests = [
         flex-wrap: wrap;
         gap: 0.35rem;
         margin-bottom: 0.65rem;
+        min-height: 1.4rem;
     }
 
     .interest-tag {
@@ -119,7 +147,7 @@ const interests = [
     }
 
     .interest-note {
-        font-size: 0.88rem;
+        font-size: 0.86rem;
         color: var(--text-muted);
         line-height: 1.55;
         font-style: italic;

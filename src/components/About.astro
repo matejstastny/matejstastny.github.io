@@ -1,10 +1,5 @@
 ---
-const details = [
-    { icon: '📍', label: 'Location', value: 'Redmond, WA' },
-    { icon: '🎓', label: 'Education', value: "UW Bothell · CE · Class of '29" },
-    { icon: '⭐', label: 'GPA', value: "3.8 · Dean's List" },
-    { icon: '🌍', label: 'Languages', value: 'Czech · English · Japanese · German' },
-];
+
 ---
 
 <section id="about">
@@ -16,37 +11,58 @@ const details = [
             <div class="about-text">
                 <p>
                     I'm a <strong>Computer Engineering</strong> student at the
-                    <strong>University of Washington Bothell</strong>, originally from the Czech
-                    Republic and now based in Redmond, WA. I'm passionate about building
-                    things&thinsp;-&thinsp;whether that's robot simulations, multiplayer games, or
-                    CLI tools.
+                    <strong>University of Washington Bothell</strong>, based in Redmond, WA. I'm
+                    passionate about building things that move, click, and occasionally explode.
                 </p>
                 <p>
                     Currently, I lead the <strong>simulation team</strong> at
                     <a href="https://github.com/TrickfireRobotics" target="_blank" rel="noopener">
                         TrickFire Robotics</a
-                    >, where I work with ROS&nbsp;2, Gazebo, and Docker to build simulation
-                    environments for our Mars rover. When I'm not debugging URDF files, I'm probably
-                    making games or tinkering with Minecraft mods.
+                    >, where we build simulation environments for Mars rovers using ROS&nbsp;2,
+                    Gazebo, and Docker.
                 </p>
                 <p>
-                    I speak Czech fluently, and I'm picking up Japanese and German on the side. I
-                    love cats, cozy games, and anything that lets me be creative with code.
+                    I love creative coding, cozy games, and cats. Always working on something
+                    interesting.
                 </p>
             </div>
 
             <div class="about-details">
-                {
-                    details.map((d) => (
-                        <div class="detail-card">
-                            <span class="detail-icon">{d.icon}</span>
-                            <div>
-                                <span class="detail-label">{d.label}</span>
-                                <span class="detail-value">{d.value}</span>
-                            </div>
-                        </div>
-                    ))
-                }
+                <div class="detail-card">
+                    <span class="detail-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </span>
+                    <div>
+                        <span class="detail-label">Location</span>
+                        <span class="detail-value">Redmond, WA</span>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <span class="detail-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                            <path d="M6 12v5c3 3 6 3 12 0v-5"></path>
+                        </svg>
+                    </span>
+                    <div>
+                        <span class="detail-label">Education</span>
+                        <span class="detail-value">UW Bothell / CE / Class of '29</span>
+                    </div>
+                </div>
+                <div class="detail-card">
+                    <span class="detail-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </span>
+                    <div>
+                        <span class="detail-label">GPA</span>
+                        <span class="detail-value">3.8 / Dean's List</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -62,7 +78,7 @@ const details = [
 
     .about-text p {
         margin-bottom: 1.25rem;
-        font-size: 1.05rem;
+        font-size: 1.02rem;
     }
 
     .about-text p:last-child {
@@ -93,14 +109,16 @@ const details = [
 
     .detail-card:hover {
         border-color: var(--border-hover);
-        box-shadow: 0 0 24px rgba(232, 168, 76, 0.06);
+        box-shadow: 0 0 24px rgba(168, 85, 247, 0.08);
         transform: translateX(4px);
     }
 
     .detail-icon {
-        font-size: 1.3rem;
         flex-shrink: 0;
         line-height: 1;
+        color: var(--violet);
+        display: flex;
+        align-items: center;
     }
 
     .detail-label {
