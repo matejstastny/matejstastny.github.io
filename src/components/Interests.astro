@@ -45,20 +45,22 @@ const interests = [
     <h2 class="section-title">Outside of code</h2>
 
     <div class="interests-grid">
-      {interests.map((item) => (
-        <div class="interest-tile">
-          <span class="interest-emoji">{item.emoji}</span>
-          <h3 class="interest-name">{item.title}</h3>
-          {item.items.length > 0 && (
-            <div class="interest-tags">
-              {item.items.map((t) => (
-                <span class="interest-tag">{t}</span>
-              ))}
-            </div>
-          )}
-          <p class="interest-note">{item.note}</p>
-        </div>
-      ))}
+      {
+        interests.map((item) => (
+          <div class="interest-tile">
+            <span class="interest-emoji">{item.emoji}</span>
+            <h3 class="interest-name">{item.title}</h3>
+            {item.items.length > 0 && (
+              <div class="interest-tags">
+                {item.items.map((t) => (
+                  <span class="interest-tag">{t}</span>
+                ))}
+              </div>
+            )}
+            <p class="interest-note">{item.note}</p>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

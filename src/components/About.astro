@@ -1,8 +1,8 @@
 ---
 const details = [
   { icon: '📍', label: 'Location', value: 'Redmond, WA' },
-  { icon: '🎓', label: 'Education', value: 'UW Bothell · CE · Class of \'29' },
-  { icon: '⭐', label: 'GPA', value: '3.8 · Dean\'s List' },
+  { icon: '🎓', label: 'Education', value: "UW Bothell · CE · Class of '29" },
+  { icon: '⭐', label: 'GPA', value: "3.8 · Dean's List" },
   { icon: '🌍', label: 'Languages', value: 'Czech · English · Japanese · German' },
 ];
 ---
@@ -16,35 +16,36 @@ const details = [
       <div class="about-text">
         <p>
           I'm a <strong>Computer Engineering</strong> student at the
-          <strong>University of Washington Bothell</strong>, originally from the
-          Czech Republic and now based in Redmond, WA. I'm passionate about
-          building things&thinsp;—&thinsp;whether that's robot simulations,
-          multiplayer games, or CLI tools.
+          <strong>University of Washington Bothell</strong>, originally from the Czech Republic and
+          now based in Redmond, WA. I'm passionate about building things&thinsp;—&thinsp;whether
+          that's robot simulations, multiplayer games, or CLI tools.
         </p>
         <p>
           Currently, I lead the <strong>simulation team</strong> at
           <a href="https://github.com/TrickfireRobotics" target="_blank" rel="noopener">
-            TrickFire Robotics</a>, where I work with ROS&nbsp;2, Gazebo, and Docker to build
-          simulation environments for our Mars rover. When I'm not debugging URDF
-          files, I'm probably making games or tinkering with Minecraft mods.
+            TrickFire Robotics</a
+          >, where I work with ROS&nbsp;2, Gazebo, and Docker to build simulation environments for
+          our Mars rover. When I'm not debugging URDF files, I'm probably making games or tinkering
+          with Minecraft mods.
         </p>
         <p>
-          I speak Czech fluently, and I'm picking up Japanese and German on the
-          side. I love cats, cozy games, and anything that lets me be creative
-          with code.
+          I speak Czech fluently, and I'm picking up Japanese and German on the side. I love cats,
+          cozy games, and anything that lets me be creative with code.
         </p>
       </div>
 
       <div class="about-details">
-        {details.map((d) => (
-          <div class="detail-card">
-            <span class="detail-icon">{d.icon}</span>
-            <div>
-              <span class="detail-label">{d.label}</span>
-              <span class="detail-value">{d.value}</span>
+        {
+          details.map((d) => (
+            <div class="detail-card">
+              <span class="detail-icon">{d.icon}</span>
+              <div>
+                <span class="detail-label">{d.label}</span>
+                <span class="detail-value">{d.value}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </div>

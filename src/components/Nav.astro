@@ -14,9 +14,13 @@ const links = [
     <a href="#hero" class="nav-logo" aria-label="Back to top">ms</a>
 
     <div class="nav-links" id="nav-links">
-      {links.map((l) => (
-        <a href={l.href} class="nav-link">{l.label}</a>
-      ))}
+      {
+        links.map((l) => (
+          <a href={l.href} class="nav-link">
+            {l.label}
+          </a>
+        ))
+      }
     </div>
 
     <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">

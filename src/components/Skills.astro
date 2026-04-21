@@ -29,19 +29,21 @@ const categories = [
     <h2 class="section-title">What I work with</h2>
 
     <div class="skills-grid">
-      {categories.map((cat) => (
-        <div class="skill-group">
-          <div class="skill-group-header">
-            <span class="skill-icon">{cat.icon}</span>
-            <h3 class="skill-category">{cat.name}</h3>
+      {
+        categories.map((cat) => (
+          <div class="skill-group">
+            <div class="skill-group-header">
+              <span class="skill-icon">{cat.icon}</span>
+              <h3 class="skill-category">{cat.name}</h3>
+            </div>
+            <div class="skill-pills">
+              {cat.items.map((item) => (
+                <span class="pill">{item}</span>
+              ))}
+            </div>
           </div>
-          <div class="skill-pills">
-            {cat.items.map((item) => (
-              <span class="pill">{item}</span>
-            ))}
-          </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>

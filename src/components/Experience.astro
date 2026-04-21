@@ -21,7 +21,7 @@ const experiences = [
     period: 'Sep 2023 — Jun 2025',
     bullets: [
       'Organized winter and spring break coding courses for elementary and middle school students using Python.',
-      'Competed in Microsoft\'s Hunt the Wumpus game dev competition as part of a 3-person team.',
+      "Competed in Microsoft's Hunt the Wumpus game dev competition as part of a 3-person team.",
       'Developed Hunt the Wumpus games in Unity (C#) in both 2024 and 2025 competitions.',
     ],
   },
@@ -34,32 +34,36 @@ const experiences = [
     <h2 class="section-title">Where I've worked</h2>
 
     <div class="timeline">
-      {experiences.map((exp) => (
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div>
-                <h3 class="timeline-role">{exp.role}</h3>
-                <p class="timeline-org">
-                  {exp.orgUrl ? (
-                    <a href={exp.orgUrl} target="_blank" rel="noopener">{exp.org}</a>
-                  ) : (
-                    exp.org
-                  )}
-                  <span class="timeline-location">&nbsp;· {exp.location}</span>
-                </p>
+      {
+        experiences.map((exp) => (
+          <div class="timeline-item">
+            <div class="timeline-dot" />
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-role">{exp.role}</h3>
+                  <p class="timeline-org">
+                    {exp.orgUrl ? (
+                      <a href={exp.orgUrl} target="_blank" rel="noopener">
+                        {exp.org}
+                      </a>
+                    ) : (
+                      exp.org
+                    )}
+                    <span class="timeline-location">&nbsp;· {exp.location}</span>
+                  </p>
+                </div>
+                <span class="timeline-period">{exp.period}</span>
               </div>
-              <span class="timeline-period">{exp.period}</span>
+              <ul class="timeline-bullets">
+                {exp.bullets.map((b) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
             </div>
-            <ul class="timeline-bullets">
-              {exp.bullets.map((b) => (
-                <li>{b}</li>
-              ))}
-            </ul>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
