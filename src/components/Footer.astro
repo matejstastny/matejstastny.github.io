@@ -3,54 +3,54 @@ const year = new Date().getFullYear();
 ---
 
 <footer>
-  <div class="container footer-inner">
-    <p class="footer-copy">
-      &copy; {year} Matej Stastny
-    </p>
-    <p class="footer-note">
-      Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>
-    </p>
-  </div>
+    <div class="container footer-inner">
+        <p class="footer-copy">
+            &copy; {year} Matej Stastny
+        </p>
+        <p class="footer-note">
+            Built with <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>
+        </p>
+    </div>
 </footer>
 
 <style>
-  footer {
-    padding: 2.5rem 0;
-    border-top: 1px solid var(--border);
-  }
-
-  .footer-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-copy {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-  }
-
-  .footer-note {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-  }
-
-  .footer-note a {
-    color: var(--text-muted);
-    border-bottom: 1px solid var(--border);
-    transition: all 0.2s ease;
-  }
-
-  .footer-note a:hover {
-    color: var(--amber);
-    border-color: var(--amber);
-  }
-
-  @media (max-width: 768px) {
-    .footer-inner {
-      flex-direction: column;
-      gap: 0.5rem;
-      text-align: center;
+    footer {
+        padding: 2.5rem 0;
+        border-top: 1px solid var(--border);
     }
-  }
+
+    .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .footer-copy {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+    }
+
+    .footer-note {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+    }
+
+    .footer-note a {
+        color: var(--text-muted);
+        border-bottom: 1px solid var(--border);
+        transition: all 0.2s ease;
+    }
+
+    .footer-note a:hover {
+        color: var(--amber);
+        border-color: var(--amber);
+    }
+
+    @media (max-width: 768px) {
+        .footer-inner {
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: center;
+        }
+    }
 </style>

@@ -1,139 +1,145 @@
 ---
 const socials = [
-  { name: 'GitHub', url: 'https://github.com/matejstastny', icon: 'github' },
-  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/matejstastny/', icon: 'linkedin' },
-  { name: 'Discord', url: 'https://discord.com/users/917095787735941141', icon: 'discord' },
-  { name: 'Bluesky', url: 'https://bsky.app/profile/matejstastny.bsky.social', icon: 'bluesky' },
-  { name: 'Instagram', url: 'https://www.instagram.com/my_daarlin', icon: 'instagram' },
-  {
-    name: 'YouTube',
-    url: 'https://www.youtube.com/channel/UCuwgS_xoutQ9mPVbhBSGwyA',
-    icon: 'youtube',
-  },
-  { name: 'Modrinth', url: 'https://modrinth.com/user/my-daarlin', icon: 'modrinth' },
-  { name: 'Handshake', url: 'https://uw.joinhandshake.com/profiles/ctnk3w', icon: 'handshake' },
+    { name: 'GitHub', url: 'https://github.com/matejstastny', icon: 'github' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/matejstastny/', icon: 'linkedin' },
+    { name: 'Discord', url: 'https://discord.com/users/917095787735941141', icon: 'discord' },
+    { name: 'Bluesky', url: 'https://bsky.app/profile/matejstastny.bsky.social', icon: 'bluesky' },
+    { name: 'Instagram', url: 'https://www.instagram.com/my_daarlin', icon: 'instagram' },
+    {
+        name: 'YouTube',
+        url: 'https://www.youtube.com/channel/UCuwgS_xoutQ9mPVbhBSGwyA',
+        icon: 'youtube',
+    },
+    { name: 'Modrinth', url: 'https://modrinth.com/user/my-daarlin', icon: 'modrinth' },
+    { name: 'Handshake', url: 'https://uw.joinhandshake.com/profiles/ctnk3w', icon: 'handshake' },
 ];
 ---
 
 <section id="contact">
-  <div class="container">
-    <div class="contact-wrapper">
-      <span class="section-label">// contact</span>
-      <h2 class="section-title contact-title">
-        Let's <span class="glow">connect</span>
-      </h2>
-      <p class="contact-desc">
-        Whether you want to collaborate on a project, talk about robotics, or just say
-        hi&thinsp;—&thinsp;my inbox is always open.
-      </p>
+    <div class="container">
+        <div class="contact-wrapper">
+            <span class="section-label">// contact</span>
+            <h2 class="section-title contact-title">
+                Let's <span class="glow">connect</span>
+            </h2>
+            <p class="contact-desc">
+                Whether you want to collaborate on a project, talk about robotics, or just say
+                hi&thinsp;—&thinsp;my inbox is always open.
+            </p>
 
-      <a href="mailto:matysta@outlook.com" class="email-link">
-        matysta@outlook.com
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M7 17L17 7"></path><path d="M7 7h10v10"></path>
-        </svg>
-      </a>
-
-      <div class="socials">
-        {
-          socials.map((s) => (
-            <a href={s.url} target="_blank" rel="noopener" class="social-chip" aria-label={s.name}>
-              <span class="social-name">{s.name}</span>
+            <a href="mailto:matysta@outlook.com" class="email-link">
+                matysta@outlook.com
+                <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path d="M7 17L17 7"></path><path d="M7 7h10v10"></path>
+                </svg>
             </a>
-          ))
-        }
-      </div>
+
+            <div class="socials">
+                {
+                    socials.map((s) => (
+                        <a
+                            href={s.url}
+                            target="_blank"
+                            rel="noopener"
+                            class="social-chip"
+                            aria-label={s.name}
+                        >
+                            <span class="social-name">{s.name}</span>
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <style>
-  #contact {
-    padding-bottom: 3rem;
-  }
+    #contact {
+        padding-bottom: 3rem;
+    }
 
-  .contact-wrapper {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-  }
+    .contact-wrapper {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
 
-  .contact-title {
-    margin-bottom: 1rem;
-  }
+    .contact-title {
+        margin-bottom: 1rem;
+    }
 
-  .contact-desc {
-    font-size: 1.05rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-  }
+    .contact-desc {
+        font-size: 1.05rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+    }
 
-  .email-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: var(--font-mono);
-    font-size: 1.1rem;
-    color: var(--amber);
-    padding: 0.75rem 1.75rem;
-    border: 1px solid var(--border-hover);
-    border-radius: 12px;
-    margin-bottom: 2.5rem;
-    transition: all 0.3s ease;
-  }
+    .email-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 1.1rem;
+        color: var(--amber);
+        padding: 0.75rem 1.75rem;
+        border: 1px solid var(--border-hover);
+        border-radius: 12px;
+        margin-bottom: 2.5rem;
+        transition: all 0.3s ease;
+    }
 
-  .email-link:hover {
-    background: rgba(232, 168, 76, 0.06);
-    box-shadow: 0 0 30px rgba(232, 168, 76, 0.1);
-    color: var(--amber-light);
-    transform: translateY(-2px);
-  }
+    .email-link:hover {
+        background: rgba(232, 168, 76, 0.06);
+        box-shadow: 0 0 30px rgba(232, 168, 76, 0.1);
+        color: var(--amber-light);
+        transform: translateY(-2px);
+    }
 
-  .email-link svg {
-    transition: transform 0.3s ease;
-  }
+    .email-link svg {
+        transition: transform 0.3s ease;
+    }
 
-  .email-link:hover svg {
-    transform: translate(2px, -2px);
-  }
+    .email-link:hover svg {
+        transform: translate(2px, -2px);
+    }
 
-  .socials {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6rem;
-  }
+    .socials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.6rem;
+    }
 
-  .social-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.55rem 1.1rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    transition: all 0.25s ease;
-  }
+    .social-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.55rem 1.1rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        transition: all 0.25s ease;
+    }
 
-  .social-chip:hover {
-    border-color: var(--border-hover);
-    color: var(--amber);
-    background: rgba(232, 168, 76, 0.04);
-    transform: translateY(-2px);
-  }
+    .social-chip:hover {
+        border-color: var(--border-hover);
+        color: var(--amber);
+        background: rgba(232, 168, 76, 0.04);
+        transform: translateY(-2px);
+    }
 
-  .social-name {
-    font-weight: 500;
-  }
+    .social-name {
+        font-weight: 500;
+    }
 </style>

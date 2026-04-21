@@ -1,5 +1,5 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://matejstastny.github.io',
+    site: 'https://matejstastny.github.io',
 });

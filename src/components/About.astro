@@ -1,127 +1,128 @@
 ---
 const details = [
-  { icon: '📍', label: 'Location', value: 'Redmond, WA' },
-  { icon: '🎓', label: 'Education', value: "UW Bothell · CE · Class of '29" },
-  { icon: '⭐', label: 'GPA', value: "3.8 · Dean's List" },
-  { icon: '🌍', label: 'Languages', value: 'Czech · English · Japanese · German' },
+    { icon: '📍', label: 'Location', value: 'Redmond, WA' },
+    { icon: '🎓', label: 'Education', value: "UW Bothell · CE · Class of '29" },
+    { icon: '⭐', label: 'GPA', value: "3.8 · Dean's List" },
+    { icon: '🌍', label: 'Languages', value: 'Czech · English · Japanese · German' },
 ];
 ---
 
 <section id="about">
-  <div class="container">
-    <span class="section-label">// about</span>
-    <h2 class="section-title">A little about me</h2>
+    <div class="container">
+        <span class="section-label">// about</span>
+        <h2 class="section-title">A little about me</h2>
 
-    <div class="about-grid">
-      <div class="about-text">
-        <p>
-          I'm a <strong>Computer Engineering</strong> student at the
-          <strong>University of Washington Bothell</strong>, originally from the Czech Republic and
-          now based in Redmond, WA. I'm passionate about building things&thinsp;—&thinsp;whether
-          that's robot simulations, multiplayer games, or CLI tools.
-        </p>
-        <p>
-          Currently, I lead the <strong>simulation team</strong> at
-          <a href="https://github.com/TrickfireRobotics" target="_blank" rel="noopener">
-            TrickFire Robotics</a
-          >, where I work with ROS&nbsp;2, Gazebo, and Docker to build simulation environments for
-          our Mars rover. When I'm not debugging URDF files, I'm probably making games or tinkering
-          with Minecraft mods.
-        </p>
-        <p>
-          I speak Czech fluently, and I'm picking up Japanese and German on the side. I love cats,
-          cozy games, and anything that lets me be creative with code.
-        </p>
-      </div>
-
-      <div class="about-details">
-        {
-          details.map((d) => (
-            <div class="detail-card">
-              <span class="detail-icon">{d.icon}</span>
-              <div>
-                <span class="detail-label">{d.label}</span>
-                <span class="detail-value">{d.value}</span>
-              </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    I'm a <strong>Computer Engineering</strong> student at the
+                    <strong>University of Washington Bothell</strong>, originally from the Czech
+                    Republic and now based in Redmond, WA. I'm passionate about building
+                    things&thinsp;—&thinsp;whether that's robot simulations, multiplayer games, or
+                    CLI tools.
+                </p>
+                <p>
+                    Currently, I lead the <strong>simulation team</strong> at
+                    <a href="https://github.com/TrickfireRobotics" target="_blank" rel="noopener">
+                        TrickFire Robotics</a
+                    >, where I work with ROS&nbsp;2, Gazebo, and Docker to build simulation
+                    environments for our Mars rover. When I'm not debugging URDF files, I'm probably
+                    making games or tinkering with Minecraft mods.
+                </p>
+                <p>
+                    I speak Czech fluently, and I'm picking up Japanese and German on the side. I
+                    love cats, cozy games, and anything that lets me be creative with code.
+                </p>
             </div>
-          ))
-        }
-      </div>
+
+            <div class="about-details">
+                {
+                    details.map((d) => (
+                        <div class="detail-card">
+                            <span class="detail-icon">{d.icon}</span>
+                            <div>
+                                <span class="detail-label">{d.label}</span>
+                                <span class="detail-value">{d.value}</span>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <style>
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 0.7fr;
-    gap: 4rem;
-    align-items: start;
-  }
-
-  .about-text p {
-    margin-bottom: 1.25rem;
-    font-size: 1.05rem;
-  }
-
-  .about-text p:last-child {
-    margin-bottom: 0;
-  }
-
-  .about-text strong {
-    color: var(--cream);
-    font-weight: 500;
-  }
-
-  .about-details {
-    display: flex;
-    flex-direction: column;
-    gap: 0.85rem;
-  }
-
-  .detail-card {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.1rem 1.25rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    transition: all 0.35s ease;
-  }
-
-  .detail-card:hover {
-    border-color: var(--border-hover);
-    box-shadow: 0 0 24px rgba(232, 168, 76, 0.06);
-    transform: translateX(4px);
-  }
-
-  .detail-icon {
-    font-size: 1.3rem;
-    flex-shrink: 0;
-    line-height: 1;
-  }
-
-  .detail-label {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 2px;
-  }
-
-  .detail-value {
-    display: block;
-    font-size: 0.93rem;
-    color: var(--cream);
-  }
-
-  @media (max-width: 768px) {
     .about-grid {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 4rem;
+        align-items: start;
     }
-  }
+
+    .about-text p {
+        margin-bottom: 1.25rem;
+        font-size: 1.05rem;
+    }
+
+    .about-text p:last-child {
+        margin-bottom: 0;
+    }
+
+    .about-text strong {
+        color: var(--cream);
+        font-weight: 500;
+    }
+
+    .about-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.85rem;
+    }
+
+    .detail-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.1rem 1.25rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        transition: all 0.35s ease;
+    }
+
+    .detail-card:hover {
+        border-color: var(--border-hover);
+        box-shadow: 0 0 24px rgba(232, 168, 76, 0.06);
+        transform: translateX(4px);
+    }
+
+    .detail-icon {
+        font-size: 1.3rem;
+        flex-shrink: 0;
+        line-height: 1;
+    }
+
+    .detail-label {
+        display: block;
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 2px;
+    }
+
+    .detail-value {
+        display: block;
+        font-size: 0.93rem;
+        color: var(--cream);
+    }
+
+    @media (max-width: 768px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+    }
 </style>

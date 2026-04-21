@@ -1,139 +1,139 @@
 ---
 const interests = [
-  {
-    emoji: '🎮',
-    title: 'Games',
-    items: ['Stray', 'Minecraft', 'Celeste'],
-    note: 'Cozy and indie games are my thing.',
-  },
-  {
-    emoji: '🕹️',
-    title: 'Game Dev',
-    items: ['Godot', 'Unity', 'GameMaker', 'libGDX'],
-    note: 'I love building games as much as playing them.',
-  },
-  {
-    emoji: '🐱',
-    title: 'Cats',
-    items: [],
-    note: 'Obviously. Just look at my profile picture.',
-  },
-  {
-    emoji: '🤖',
-    title: 'Robotics',
-    items: ['ROS 2', 'Gazebo', 'Mars rovers'],
-    note: 'Making robots do things in simulation so they can do things in real life.',
-  },
-  {
-    emoji: '🇨🇿',
-    title: 'Czech Heritage',
-    items: [],
-    note: 'Born and raised in the Czech Republic. Fluent in Czech, fueled by Czech food.',
-  },
-  {
-    emoji: '🌸',
-    title: 'Languages',
-    items: ['Japanese', 'German'],
-    note: 'Currently learning both — slowly but surely.',
-  },
+    {
+        emoji: '🎮',
+        title: 'Games',
+        items: ['Stray', 'Minecraft', 'Celeste'],
+        note: 'Cozy and indie games are my thing.',
+    },
+    {
+        emoji: '🕹️',
+        title: 'Game Dev',
+        items: ['Godot', 'Unity', 'GameMaker', 'libGDX'],
+        note: 'I love building games as much as playing them.',
+    },
+    {
+        emoji: '🐱',
+        title: 'Cats',
+        items: [],
+        note: 'Obviously. Just look at my profile picture.',
+    },
+    {
+        emoji: '🤖',
+        title: 'Robotics',
+        items: ['ROS 2', 'Gazebo', 'Mars rovers'],
+        note: 'Making robots do things in simulation so they can do things in real life.',
+    },
+    {
+        emoji: '🇨🇿',
+        title: 'Czech Heritage',
+        items: [],
+        note: 'Born and raised in the Czech Republic. Fluent in Czech, fueled by Czech food.',
+    },
+    {
+        emoji: '🌸',
+        title: 'Languages',
+        items: ['Japanese', 'German'],
+        note: 'Currently learning both — slowly but surely.',
+    },
 ];
 ---
 
 <section id="interests">
-  <div class="container">
-    <span class="section-label">// interests</span>
-    <h2 class="section-title">Outside of code</h2>
+    <div class="container">
+        <span class="section-label">// interests</span>
+        <h2 class="section-title">Outside of code</h2>
 
-    <div class="interests-grid">
-      {
-        interests.map((item) => (
-          <div class="interest-tile">
-            <span class="interest-emoji">{item.emoji}</span>
-            <h3 class="interest-name">{item.title}</h3>
-            {item.items.length > 0 && (
-              <div class="interest-tags">
-                {item.items.map((t) => (
-                  <span class="interest-tag">{t}</span>
-                ))}
-              </div>
-            )}
-            <p class="interest-note">{item.note}</p>
-          </div>
-        ))
-      }
+        <div class="interests-grid">
+            {
+                interests.map((item) => (
+                    <div class="interest-tile">
+                        <span class="interest-emoji">{item.emoji}</span>
+                        <h3 class="interest-name">{item.title}</h3>
+                        {item.items.length > 0 && (
+                            <div class="interest-tags">
+                                {item.items.map((t) => (
+                                    <span class="interest-tag">{t}</span>
+                                ))}
+                            </div>
+                        )}
+                        <p class="interest-note">{item.note}</p>
+                    </div>
+                ))
+            }
+        </div>
     </div>
-  </div>
 </section>
 
 <style>
-  .interests-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-
-  .interest-tile {
-    padding: 1.5rem;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    transition: all 0.35s ease;
-  }
-
-  .interest-tile:hover {
-    border-color: var(--border-hover);
-    box-shadow: 0 0 24px rgba(232, 168, 76, 0.05);
-    transform: translateY(-3px);
-  }
-
-  .interest-emoji {
-    font-size: 1.6rem;
-    display: block;
-    margin-bottom: 0.75rem;
-    line-height: 1;
-  }
-
-  .interest-name {
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 600;
-    margin-bottom: 0.6rem;
-  }
-
-  .interest-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    margin-bottom: 0.65rem;
-  }
-
-  .interest-tag {
-    font-family: var(--font-mono);
-    font-size: 0.68rem;
-    letter-spacing: 0.03em;
-    padding: 0.22rem 0.55rem;
-    border-radius: 5px;
-    background: var(--bg-secondary);
-    color: var(--text-muted);
-    border: 1px solid var(--border);
-  }
-
-  .interest-note {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    line-height: 1.55;
-    font-style: italic;
-  }
-
-  @media (max-width: 900px) {
     .interests-grid {
-      grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
     }
-  }
 
-  @media (max-width: 560px) {
-    .interests-grid {
-      grid-template-columns: 1fr;
+    .interest-tile {
+        padding: 1.5rem;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        transition: all 0.35s ease;
     }
-  }
+
+    .interest-tile:hover {
+        border-color: var(--border-hover);
+        box-shadow: 0 0 24px rgba(232, 168, 76, 0.05);
+        transform: translateY(-3px);
+    }
+
+    .interest-emoji {
+        font-size: 1.6rem;
+        display: block;
+        margin-bottom: 0.75rem;
+        line-height: 1;
+    }
+
+    .interest-name {
+        font-family: var(--font-body);
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+    }
+
+    .interest-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+        margin-bottom: 0.65rem;
+    }
+
+    .interest-tag {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.03em;
+        padding: 0.22rem 0.55rem;
+        border-radius: 5px;
+        background: var(--bg-secondary);
+        color: var(--text-muted);
+        border: 1px solid var(--border);
+    }
+
+    .interest-note {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        line-height: 1.55;
+        font-style: italic;
+    }
+
+    @media (max-width: 900px) {
+        .interests-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 560px) {
+        .interests-grid {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
