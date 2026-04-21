@@ -1,0 +1,198 @@
+---
+const experiences = [
+  {
+    role: 'Simulation Team Lead & Drivebase Member',
+    org: 'TrickFire Robotics',
+    orgUrl: 'https://github.com/TrickfireRobotics',
+    location: 'University of Washington Bothell',
+    period: 'Sep 2025 — Present',
+    bullets: [
+      'Lead simulation infrastructure for a 50-member robotics team competing in the University Rover Challenge.',
+      'Develop and maintain rover simulation using ROS 2 (Humble), Gazebo Fortress, RViz, and URDF.',
+      'Containerize development environments with Docker for reproducibility across team machines.',
+      'Configure ROS–Gazebo bridges, joint controllers, and simulation plugins to mirror real-world rover behavior.',
+    ],
+  },
+  {
+    role: 'Club Member & Coding Instructor',
+    org: 'Video Game Design Club',
+    orgUrl: null,
+    location: 'Redmond High School',
+    period: 'Sep 2023 — Jun 2025',
+    bullets: [
+      'Organized winter and spring break coding courses for elementary and middle school students using Python.',
+      'Competed in Microsoft\'s Hunt the Wumpus game dev competition as part of a 3-person team.',
+      'Developed Hunt the Wumpus games in Unity (C#) in both 2024 and 2025 competitions.',
+    ],
+  },
+];
+---
+
+<section id="experience">
+  <div class="container">
+    <span class="section-label">// experience</span>
+    <h2 class="section-title">Where I've worked</h2>
+
+    <div class="timeline">
+      {experiences.map((exp) => (
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 class="timeline-role">{exp.role}</h3>
+                <p class="timeline-org">
+                  {exp.orgUrl ? (
+                    <a href={exp.orgUrl} target="_blank" rel="noopener">{exp.org}</a>
+                  ) : (
+                    exp.org
+                  )}
+                  <span class="timeline-location">&nbsp;· {exp.location}</span>
+                </p>
+              </div>
+              <span class="timeline-period">{exp.period}</span>
+            </div>
+            <ul class="timeline-bullets">
+              {exp.bullets.map((b) => (
+                <li>{b}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding-left: 2rem;
+  }
+
+  /* Vertical line */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      var(--amber-dim),
+      var(--border) 40%,
+      var(--border) 60%,
+      transparent
+    );
+  }
+
+  .timeline-item {
+    position: relative;
+  }
+
+  .timeline-dot {
+    position: absolute;
+    left: -2rem;
+    top: 8px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg-deep);
+    border: 2px solid var(--amber-dim);
+    z-index: 1;
+    transition: all 0.3s ease;
+  }
+
+  .timeline-item:hover .timeline-dot {
+    background: var(--amber);
+    border-color: var(--amber);
+    box-shadow: 0 0 12px rgba(232, 168, 76, 0.4);
+  }
+
+  .timeline-content {
+    padding: 1.75rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    transition: all 0.35s ease;
+  }
+
+  .timeline-content:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 0 30px rgba(232, 168, 76, 0.04);
+  }
+
+  .timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .timeline-role {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-org {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+
+  .timeline-org a {
+    font-weight: 500;
+  }
+
+  .timeline-location {
+    color: var(--text-muted);
+  }
+
+  .timeline-period {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+
+  .timeline-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .timeline-bullets li {
+    position: relative;
+    padding-left: 1.2rem;
+    font-size: 0.93rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .timeline-bullets li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--amber-dim);
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .timeline-header {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .timeline-content {
+      padding: 1.25rem;
+    }
+  }
+</style>

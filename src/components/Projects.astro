@@ -1,0 +1,201 @@
+---
+const projects = [
+  {
+    name: 'Gazebo Simulations',
+    description:
+      'ROS 2 Gazebo simulation environment for TrickFire Robotics\u2019 Mars rover. Enables the software team to iterate without physical hardware using Gazebo Fortress, RViz, URDF, and Docker.',
+    tags: ['Python', 'ROS 2', 'Gazebo', 'Docker', 'URDF'],
+    url: 'https://github.com/matejstastny/gazebo-simulations',
+    highlight: true,
+    badge: 'Team project',
+  },
+  {
+    name: 'Flaggi',
+    description:
+      'A multiplayer capture-the-flag game built entirely from scratch in Java\u200a\u2014\u200ano game engine, no frameworks, just raw graphics and networking.',
+    tags: ['Java', 'Networking', 'Graphics', 'Game Dev'],
+    url: 'https://github.com/matejstastny/flaggi',
+    highlight: false,
+    badge: 'Solo project',
+  },
+  {
+    name: 'Azalea',
+    description:
+      'A minimal CLI tool for managing Minecraft Modrinth and Fabric modpacks. Install, update, and sync mods from the terminal without fiddling with launchers.',
+    tags: ['Python', 'CLI', 'Modrinth API'],
+    url: 'https://github.com/matejstastny/azalea',
+    highlight: false,
+    badge: 'Solo project',
+  },
+];
+---
+
+<section id="projects">
+  <div class="container">
+    <span class="section-label">// projects</span>
+    <h2 class="section-title">Things I've built</h2>
+
+    <div class="project-grid">
+      {projects.map((p) => (
+        <a
+          href={p.url}
+          target="_blank"
+          rel="noopener"
+          class:list={['project-card', { 'project-card--featured': p.highlight }]}
+        >
+          <div class="card-header">
+            <span class="card-badge">{p.badge}</span>
+            <svg class="card-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 17L17 7" /><path d="M7 7h10v10" />
+            </svg>
+          </div>
+          <h3 class="card-title">{p.name}</h3>
+          <p class="card-desc">{p.description}</p>
+          <div class="card-tags">
+            {p.tags.map((t) => (
+              <span class="tag">{t}</span>
+            ))}
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ── Card ── */
+  .project-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    color: var(--cream);
+    transition: all 0.4s ease;
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    opacity: 0;
+    background: radial-gradient(
+      600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      rgba(232, 168, 76, 0.04),
+      transparent 40%
+    );
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+
+  .project-card:hover::before {
+    opacity: 1;
+  }
+
+  .project-card:hover {
+    border-color: var(--border-hover);
+    box-shadow: 0 4px 40px rgba(232, 168, 76, 0.06);
+    transform: translateY(-4px);
+    color: var(--cream);
+  }
+
+  .project-card--featured {
+    border-color: rgba(232, 168, 76, 0.12);
+    background:
+      linear-gradient(135deg, rgba(232, 168, 76, 0.03) 0%, transparent 50%),
+      var(--bg-card);
+  }
+
+  /* ── Card internals ── */
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .card-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--amber);
+    padding: 0.3rem 0.7rem;
+    background: rgba(232, 168, 76, 0.08);
+    border-radius: 6px;
+  }
+
+  .card-arrow {
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+  }
+
+  .project-card:hover .card-arrow {
+    color: var(--amber);
+    transform: translate(2px, -2px);
+  }
+
+  .card-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-desc {
+    font-size: 0.93rem;
+    color: var(--text-secondary);
+    flex: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    background: var(--bg-secondary);
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    transition: all 0.25s ease;
+  }
+
+  .project-card:hover .tag {
+    border-color: rgba(232, 168, 76, 0.1);
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.project-card').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      (e.currentTarget as HTMLElement).style.setProperty('--mouse-x', `${x}%`);
+      (e.currentTarget as HTMLElement).style.setProperty('--mouse-y', `${y}%`);
+    });
+  });
+</script>
