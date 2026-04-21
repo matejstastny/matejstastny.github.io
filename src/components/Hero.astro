@@ -1,0 +1,252 @@
+---
+---
+
+<section id="hero">
+  <div class="hero-ambient hero-ambient--left"></div>
+  <div class="hero-ambient hero-ambient--right"></div>
+
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <p class="hero-greeting fade-in">Hey there, I'm</p>
+      <h1 class="hero-name fade-in delay-1">
+        Matej&nbsp;<span class="glow">Stastny</span>
+      </h1>
+      <p class="hero-tagline fade-in delay-2">
+        Computer Engineering student, robotics simulation lead, and game dev
+        enthusiast&thinsp;—&thinsp;building things that move, click, and
+        occasionally explode.
+      </p>
+      <div class="hero-cta fade-in delay-3">
+        <a href="#projects" class="btn btn--primary">See my work</a>
+        <a href="#contact" class="btn btn--ghost">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-in delay-2">
+      <div class="pfp-frame">
+        <img
+          src="/flower-kitty.jpeg"
+          alt="A ginger kitten sitting in a field of daisies with a dandelion on its head"
+          width="260"
+          height="260"
+          class="pfp"
+        />
+        <div class="pfp-glow"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint fade-in delay-5">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<style>
+  /* ── Section ── */
+  #hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── Ambient glows ── */
+  .hero-ambient {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-ambient--left {
+    top: 15%;
+    left: -8%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(232, 168, 76, 0.06) 0%, transparent 70%);
+    animation: breathe 8s ease-in-out infinite;
+  }
+
+  .hero-ambient--right {
+    bottom: 8%;
+    right: -5%;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(143, 181, 115, 0.04) 0%, transparent 70%);
+    animation: breathe 10s ease-in-out infinite 2s;
+  }
+
+  /* ── Grid ── */
+  .hero-grid {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* ── Text ── */
+  .hero-greeting {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    color: var(--amber);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-name {
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1.08;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-tagline {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── CTA buttons ── */
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.78rem 2rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn--primary {
+    background: var(--amber);
+    color: var(--bg-deep);
+    box-shadow: 0 0 24px rgba(232, 168, 76, 0.2);
+  }
+
+  .btn--primary:hover {
+    background: var(--amber-light);
+    color: var(--bg-deep);
+    box-shadow: 0 0 36px rgba(232, 168, 76, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .btn--ghost {
+    border: 1px solid var(--border-hover);
+    color: var(--cream);
+    background: transparent;
+  }
+
+  .btn--ghost:hover {
+    border-color: var(--amber);
+    color: var(--amber);
+    transform: translateY(-2px);
+  }
+
+  /* ── PFP ── */
+  .hero-visual {
+    flex-shrink: 0;
+  }
+
+  .pfp-frame {
+    position: relative;
+    width: 260px;
+    height: 260px;
+  }
+
+  .pfp {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px;
+    border: 2px solid rgba(232, 168, 76, 0.2);
+    position: relative;
+    z-index: 1;
+    transition: border-color 0.4s ease;
+  }
+
+  .pfp-frame:hover .pfp {
+    border-color: rgba(232, 168, 76, 0.45);
+  }
+
+  .pfp-glow {
+    position: absolute;
+    inset: -18px;
+    background: radial-gradient(circle, rgba(232, 168, 76, 0.1) 0%, transparent 70%);
+    border-radius: 34px;
+    z-index: 0;
+    animation: breathe 6s ease-in-out infinite;
+  }
+
+  /* ── Scroll indicator ── */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .scroll-hint span {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 36px;
+    background: linear-gradient(to bottom, var(--amber-dim), transparent);
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .hero-grid {
+      flex-direction: column-reverse;
+      gap: 2.5rem;
+      text-align: center;
+    }
+
+    .hero-tagline {
+      margin-inline: auto;
+    }
+
+    .hero-cta {
+      justify-content: center;
+    }
+
+    .pfp-frame {
+      width: 180px;
+      height: 180px;
+    }
+
+    .scroll-hint {
+      display: none;
+    }
+  }
+</style>
